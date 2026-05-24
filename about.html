@@ -89,19 +89,19 @@
             color: var(--accent-color);
         }
 
-        /* About Page Content */
+        /* About Page Content with Image on the Left */
         main {
-            max-width: 1000px; /* Slightly wider to accommodate image */
+            max-width: 1100px; /* Wider to accommodate image */
             margin: 0 auto;
             padding: 0 20px 100px 20px;
-            display: flex; /* Flexbox for image/text side-by-side */
-            gap: 40px; /* Space between image and text */
-            align-items: flex-start; /* Align content to the top */
+            display: flex; /* Flexbox for side-by-side layout */
+            gap: 50px; /* Space between image and text */
+            align-items: flex-start; /* Align content to top */
         }
 
         .about-image {
-            width: 350px; /* Specific width for the image */
-            flex-shrink: 0; /* Prevent the image from shrinking */
+            width: 450px; /* Specific width for the image column */
+            flex-shrink: 0; /* Prevents image from shrinking */
         }
 
         .about-image img {
@@ -111,7 +111,7 @@
         }
 
         .about-text-content {
-            flex-grow: 1; /* Text takes up the rest of the space */
+            flex-grow: 1; /* Text content fills remaining space */
         }
 
         .about-title {
@@ -165,11 +165,14 @@
             main {
                 flex-direction: column; /* Stack vertically on small tablets */
                 align-items: center;
-                gap: 20px;
+                gap: 30px;
             }
             .about-image {
                 width: 100%; /* Image takes full width when stacked */
-                max-width: 400px; /* But don't let it get too huge */
+                max-width: 500px; /* But limit its size */
+            }
+            .about-title {
+                text-align: center;
             }
         }
 
@@ -192,7 +195,6 @@
             .about-title {
                 font-size: 1.6rem;
                 margin-bottom: 30px;
-                text-align: center; /* Centered title on small screens */
             }
             .about-paragraph {
                 font-size: 0.95rem;
@@ -225,7 +227,7 @@
 
     <main>
         <div class="about-image">
-            <img src="your-image-source.png" alt="Illustrative image of a person in a kimono">
+            <img src="about-image.png" alt="Illustrative image of a person in a kimono">
         </div>
         <div class="about-text-content">
             <h1 class="about-title">About</h1>
