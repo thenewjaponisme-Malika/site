@@ -34,7 +34,7 @@
         header {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 60px 20px 20px 20px;
+            padding: 60px 20px 0px 20px; /* Reduced bottom padding */
             text-align: center;
         }
 
@@ -68,10 +68,10 @@
         }
 
         nav {
-            margin-bottom: 0px; /* Removed bottom margin to connect with banner */
             border-top: 1px solid var(--border-color);
             border-bottom: 1px solid var(--border-color);
             padding: 18px 0;
+            margin-bottom: 0;
         }
 
         nav a {
@@ -89,75 +89,49 @@
             color: var(--accent-color);
         }
 
-        /* Full-Width Photo Banner Slider */
-        .banner-slider-container {
-            position: relative;
-            width: 100vw;
-            height: 70vh; /* Takes 70% of screen height */
-            left: 50%;
-            right: 50%;
-            margin-left: -50vw;
-            margin-right: -50vw;
-            overflow: hidden;
-            background-color: #000;
-            margin-bottom: 60px;
+        /* Animated Gradient Line - Positioned below Nav & above Manifesto */
+        .animated-gradient-line {
+            height: 4px; /* Made thicker for a stronger visual accent */
+            max-width: 800px; /* Aligns beautifully with the text width below it */
+            width: calc(100% - 40px);
+            margin: 35px auto; /* Perfect balanced spacing below nav and above text */
+            
+            /* Gradient setup: crimson to white to crimson */
+            background: linear-gradient(90deg, var(--accent-color) 0%, #ffffff 50%, var(--accent-color) 100%);
+            background-size: 200% 100%;
+            
+            /* Infinite smooth movement animation */
+            animation: moveGradient 4s linear infinite;
         }
 
-        .slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 1.5s ease-in-out; /* Smooth transition */
-            background-size: cover;
-            background-position: center;
+        /* Infinite horizontal movement logic */
+        @keyframes moveGradient {
+            0% { background-position: 100% 0%; }
+            100% { background-position: -100% 0%; }
         }
 
-        /* Overlay to darken photos for perfect text readability */
-        .slide::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.65); 
-        }
-
-        /* Active slide state */
-        .slide.active {
-            opacity: 1;
-        }
-
-        /* Manifesto Content Layered Over Photos */
+        /* Manifesto Intro Section */
         .intro-manifesto {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 5;
-            max-width: 850px;
-            width: 90%;
+            max-width: 800px;
+            margin: 0 auto 60px auto;
             text-align: center;
             padding: 0 20px;
         }
 
         .intro-question {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             font-weight: 400;
             letter-spacing: 0.5px;
-            color: #ffffff;
-            margin-bottom: 20px;
+            color: var(--text-color);
+            margin-bottom: 18px;
             line-height: 1.4;
         }
 
         .intro-description {
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 300;
-            color: #dddddd;
-            max-width: 750px;
+            color: var(--muted-text);
+            max-width: 720px;
             margin: 0 auto;
             line-height: 1.7;
         }
@@ -330,28 +304,26 @@
             }
             nav {
                 padding: 12px 0;
-                margin-bottom: 0px;
             }
             nav a {
                 margin: 0 6px;
                 font-size: 0.65rem;
                 letter-spacing: 1px;
             }
-            
-            /* Banner Adjustments for Mobile */
-            .banner-slider-container {
-                height: 60vh; /* Slightly shorter on mobile phones */
+            .animated-gradient-line {
+                height: 3px; /* Slightly thinner on phones to maintain proportion */
+                margin: 25px auto;
+            }
+            .intro-manifesto {
                 margin-bottom: 40px;
             }
             .intro-question {
-                font-size: 1.1rem;
+                font-size: 1.15rem;
                 margin-bottom: 12px;
             }
             .intro-description {
                 font-size: 0.85rem;
-                line-height: 1.6;
             }
-            
             .feed-grid {
                 grid-template-columns: 1fr; 
                 gap: 15px;
@@ -409,19 +381,15 @@
             <a href="/instagram.html">Instagram</a>
         </nav>
 
-        <div class="banner-slider-container">
-            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=cover&w=1600&q=80');"></div>
-            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=cover&w=1600&q=80');"></div>
-            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=cover&w=1600&q=80');"></div>
+        <div class="animated-gradient-line"></div>
 
-            <div class="intro-manifesto">
-                <h1 class="intro-question">Have you ever wondered what is the true Japanese art of living?</h1>
-                <p class="intro-description">
-                    From the perfectly imperfect beauty to the practical beauty of retro aesthetic, and everyday essentials. 
-                    Explore history, modern style, Japanese food, and essential living, where Japanese culture explained simply, 
-                    making it easy for foreigners to see, connect with, and understand.
-                </p>
-            </div>
+        <div class="intro-manifesto">
+            <h1 class="intro-question">Have you ever wondered what is the true Japanese art of living?</h1>
+            <p class="intro-description">
+                From the perfectly imperfect beauty to the practical beauty of retro aesthetic, and everyday essentials. 
+                Explore history, modern style, Japanese food, and essential living, where Japanese culture explained simply, 
+                making it easy for foreigners to see, connect with, and understand.
+            </p>
         </div>
     </header>
 
@@ -449,7 +417,7 @@
             <h2 class="category-heading">Style</h2>
             <div class="feed-grid">
                 <a href="#" class="feed-item">
-                    <div class="image-wrapper"><img src="https://images.unsplash.com/photo-1528330983277-13d401cdc186?auto=format&fit=cover&w=800&q=80" alt=""></div>
+                    <div class="image-wrapper"><img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=cover&w=800&q=80" alt=""></div>
                     <div class="item-caption"><h3 class="item-title">Winter Elegance: How to Style a Japanese Kimono in Cold Seasons</h3></div>
                 </a>
                 <a href="#" class="feed-item">
@@ -457,4 +425,80 @@
                     <div class="item-caption"><h3 class="item-title">Beyond Silk: The Textures and Weaves of Tsumugi</h3></div>
                 </a>
                 <a href="#" class="feed-item">
-                    <div class="image-wrapper"><img src="https://images.unsplash.
+                    <div class="image-wrapper"><img src="https://images.unsplash.com/photo-1496116211225-793530dc2ecf?auto=format&fit=cover&w=800&q=80" alt=""></div>
+                    <div class="item-caption"><h3 class="item-title">Modern Adaptations of the Traditional Yukata</h3></div>
+                </a>
+            </div>
+        </section>
+
+        <section class="category-section">
+            <h2 class="category-heading">Food</h2>
+            <div class="feed-grid">
+                <a href="#" class="feed-item">
+                    <div class="image-wrapper"><img src="https://images.unsplash.com/photo-1582450871972-ab5ca641643d?auto=format&fit=cover&w=800&q=80" alt=""></div>
+                    <div class="item-caption"><h3 class="item-title">The Geometry of Kaiseki: Artistry on a Plate</h3></div>
+                </a>
+                <a href="#" class="feed-item">
+                    <div class="image-wrapper"><img src="https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=cover&w=800&q=80" alt=""></div>
+                    <div class="item-caption"><h3 class="item-title">Chado: The Aesthetic Rituals of Matcha and Tea</h3></div>
+                </a>
+                <a href="#" class="feed-item">
+                    <div class="image-wrapper"><img src="https://images.unsplash.com/photo-1617093727343-374698b1b08d?auto=format&fit=cover&w=800&q=80" alt=""></div>
+                    <div class="item-caption"><h3 class="item-title">Seasonal Wagashi: Edible Poetry of the Equinox</h3></div>
+                </a>
+            </div>
+        </section>
+
+        <section class="category-section">
+            <h2 class="category-heading">Art of living</h2>
+            <div class="feed-grid">
+                <a href="#" class="feed-item">
+                    <div class="image-wrapper"><img src="https://images.unsplash.com/photo-1582963116812-70b5516a7f5a?auto=format&fit=cover&w=800&q=80" alt=""></div>
+                    <div class="item-caption"><h3 class="item-title">Curating Space: Living with Less, Feeling with More</h3></div>
+                </a>
+                <a href="#" class="feed-item">
+                    <div class="image-wrapper"><img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=cover&w=800&q=80" alt=""></div>
+                    <div class="item-caption"><h3 class="item-title">The Tsukimi Ritual: Celebrating the Mid-Autumn Harvest Moon</h3></div>
+                </a>
+                <a href="#" class="feed-item">
+                    <div class="image-wrapper"><img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=cover&w=800&q=80" alt=""></div>
+                    <div class="item-caption"><h3 class="item-title">Seasonal Transience: Welcoming Autumn Spirits via Fire</h3></div>
+                </a>
+            </div>
+        </section>
+
+        <section class="category-section">
+            <h2 class="category-heading">Japanese philosophy</h2>
+            <div class="feed-grid">
+                <a href="#" class="feed-item">
+                    <div class="image-wrapper"><img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=cover&w=800&q=80" alt=""></div>
+                    <div class="item-caption"><h3 class="item-title">Wabi-Sabi: Finding Grace in Wear and Imperfection</h3></div>
+                </a>
+                <a href="#" class="feed-item">
+                    <div class="image-wrapper"><img src="https://images.unsplash.com/photo-1504618223053-559bdef9dd5a?auto=format&fit=cover&w=800&q=80" alt=""></div>
+                    <div class="item-caption"><h3 class="item-title">Mono no Aware: The Beautiful Melancholy of Ephemeral Life</h3></div>
+                </a>
+                <a href="#" class="feed-item">
+                    <div class="image-wrapper"><img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=cover&w=800&q=80" alt=""></div>
+                    <div class="item-caption"><h3 class="item-title">Ma (間): The Power of Empty Space and Active Silence</h3></div>
+                </a>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <h2 class="contact-title">Contact Us</h2>
+            <p class="contact-text">Have a question, project, or collaboration in mind? We would love to hear from you. Reach out via our social community or directly by email.</p>
+            <div class="contact-links">
+                <a href="https://www.instagram.com/thenewjaponisme/" target="_blank" rel="noopener noreferrer" class="contact-link-item">Instagram</a>
+                <a href="mailto:info@thenewjaponisme.com" class="contact-link-item">Send Email</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 THE NEW JAPONISME. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+</body>
+</html>
