@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The New Japonisme</title>
+    <title>Articles — The New Japonisme</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
@@ -11,7 +11,6 @@
         :root {
             --bg-color: #000000; /* Pure black background */
             --text-color: #eeeeee; /* Soft white text */
-            --muted-text: #a0a0a0; /* Muted grey for descriptions */
             --accent-color: #9e2a2b; /* Elegant Japanese crimson */
             --border-color: #1a1a1a; /* Dark grey borders */
         }
@@ -26,7 +25,7 @@
             font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
-            line-height: 1.6;
+            line-height: 1.5;
             -webkit-font-smoothing: antialiased;
         }
 
@@ -68,7 +67,7 @@
         }
 
         nav {
-            margin-bottom: 40px;
+            margin-bottom: 50px;
             border-top: 1px solid var(--border-color);
             border-bottom: 1px solid var(--border-color);
             padding: 18px 0;
@@ -89,30 +88,6 @@
             color: var(--accent-color);
         }
 
-        /* Manifesto Intro Section */
-        .intro-manifesto {
-            max-width: 800px;
-            margin: 0 auto 60px auto;
-            text-align: center;
-            padding: 0 20px;
-        }
-
-        .intro-question {
-            font-size: 1.3rem;
-            font-weight: 400;
-            letter-spacing: 0.5px;
-            color: var(--text-color);
-            margin-bottom: 15px;
-        }
-
-        .intro-description {
-            font-size: 0.95rem;
-            font-weight: 300;
-            color: var(--muted-text);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
         /* Main Content Container */
         main {
             max-width: 1200px;
@@ -120,39 +95,21 @@
             padding: 0 20px 80px 20px;
         }
 
-        /* Category Section Styling */
-        .category-section {
-            margin-bottom: 60px;
-        }
-
-        .category-heading {
-            font-size: 1.4rem;
+        .page-title {
+            font-size: 1.8rem;
             font-weight: 400;
             text-transform: uppercase;
             letter-spacing: 3px;
+            margin-bottom: 40px;
+            text-align: center;
             color: var(--text-color);
-            margin-bottom: 25px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid var(--border-color);
-            display: flex;
-            align-items: center;
         }
 
-        .category-heading::before {
-            content: "";
-            display: inline-block;
-            width: 6px;
-            height: 6px;
-            background-color: var(--accent-color);
-            border-radius: 50%;
-            margin-right: 12px;
-        }
-
-        /* Instagram-style 3-in-a-row Grid */
+        /* Chronological Feed (Strict 3-in-a-row Grid) */
         .feed-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 15px; 
+            gap: 20px; 
         }
 
         .feed-item {
@@ -168,7 +125,7 @@
         .image-wrapper {
             position: relative;
             width: 100%;
-            padding-top: 100%; 
+            padding-top: 100%; /* Strict 1:1 Instagram Square */
             overflow: hidden;
             background-color: #111;
         }
@@ -187,9 +144,20 @@
             transform: scale(1.03);
         }
 
+        /* Caption underneath the photo with category tag */
         .item-caption {
             padding: 20px;
             background: #050505;
+        }
+
+        .item-category {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--accent-color); /* Elegant red category label */
+            font-weight: 700;
+            margin-bottom: 8px;
+            display: block;
         }
 
         .item-title {
@@ -218,10 +186,6 @@
                 font-size: 2.8rem;
                 letter-spacing: 3px;
             }
-            .logo-icon {
-                width: 38px;
-                height: 38px;
-            }
         }
 
         @media (max-width: 768px) {
@@ -232,15 +196,9 @@
                 margin: 0 8px;
                 font-size: 0.7rem;
             }
-            .intro-question {
-                font-size: 1.15rem;
-            }
-            .intro-description {
-                font-size: 0.85rem;
-            }
             .feed-grid {
-                grid-template-columns: 1fr; 
-                gap: 15px;
+                grid-template-columns: 1fr; /* Single column on phones */
+                gap: 20px;
             }
             .logo {
                 font-size: 2rem;
@@ -250,8 +208,9 @@
                 width: 30px;
                 height: 30px;
             }
-            .category-heading {
-                font-size: 1.1rem;
+            .page-title {
+                font-size: 1.4rem;
+                margin-bottom: 25px;
             }
         }
     </style>
@@ -271,109 +230,74 @@
             <a href="/about.html">About</a>
             <a href="/instagram.html">Instagram</a>
         </nav>
-
-        <div class="intro-manifesto">
-            <h1 class="intro-question">Have you ever wondered what is the true Japanese art of living?</h1>
-            <p class="intro-description">
-                From the perfectly imperfect beauty to the practical beauty of retro aesthetic, and everyday essentials. 
-                Explore history, modern style, Japanese food, and essential living, where Japanese culture explained simply, 
-                making it easy for foreigners to see, connect with, and understand.
-            </p>
-        </div>
     </header>
 
     <main>
+        <h1 class="page-title">All Articles</h1>
+        
+        <div class="feed-grid">
+            
+            <a href="#" class="feed-item">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=cover&w=800&q=80" alt="">
+                </div>
+                <div class="item-caption">
+                    <span class="item-category">Aesthetic Japan</span>
+                    <h2 class="item-title">The Architectural Lines of Kyoto's Hidden Temples</h2>
+                </div>
+            </a>
 
-        <section class="category-section">
-            <h2 class="category-heading">Aesthetic Japan</h2>
-            <div class="feed-grid">
-                <a href="#" class="feed-item">
-                    <div class="image-wrapper"><img src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=cover&w=800&q=80" alt=""></div>
-                    <div class="item-caption"><h3 class="item-title">The Architectural Lines of Kyoto's Hidden Temples</h3></div>
-                </a>
-                <a href="#" class="feed-item">
-                    <div class="image-wrapper"><img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=cover&w=800&q=80" alt=""></div>
-                    <div class="item-caption"><h3 class="item-title">Showa Era Minimalism: A Visual Retrospective</h3></div>
-                </a>
-                <a href="#" class="feed-item">
-                    <div class="image-wrapper"><img src="https://images.unsplash.com/photo-1528164344705-47542687000d?auto=format&fit=cover&w=800&q=80" alt=""></div>
-                    <div class="item-caption"><h3 class="item-title">Shadow and Light in Traditional Wooden Machiya</h3></div>
-                </a>
-            </div>
-        </section>
+            <a href="#" class="feed-item">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=cover&w=800&q=80" alt="">
+                </div>
+                <div class="item-caption">
+                    <span class="item-category">Style</span>
+                    <h2 class="item-title">Winter Elegance: How to Style a Japanese Kimono in Cold Seasons</h2>
+                </div>
+            </a>
 
-        <section class="category-section">
-            <h2 class="category-heading">Style</h2>
-            <div class="feed-grid">
-                <a href="#" class="feed-item">
-                    <div class="image-wrapper"><img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=cover&w=800&q=80" alt=""></div>
-                    <div class="item-caption"><h3 class="item-title">Winter Elegance: How to Style a Japanese Kimono in Cold Seasons</h3></div>
-                </a>
-                <a href="#" class="feed-item">
-                    <div class="image-wrapper"><img src="https://images.unsplash.com/photo-1517404212738-1926308ef81a?auto=format&fit=cover&w=800&q=80" alt=""></div>
-                    <div class="item-caption"><h3 class="item-title">Beyond Silk: The Textures and Weaves of Tsumugi</h3></div>
-                </a>
-                <a href="#" class="feed-item">
-                    <div class="image-wrapper"><img src="https://images.unsplash.com/photo-1496116211225-793530dc2ecf?auto=format&fit=cover&w=800&q=80" alt=""></div>
-                    <div class="item-caption"><h3 class="item-title">Modern Adaptations of the Traditional Yukata</h3></div>
-                </a>
-            </div>
-        </section>
+            <a href="#" class="feed-item">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1582450871972-ab5ca641643d?auto=format&fit=cover&w=800&q=80" alt="">
+                </div>
+                <div class="item-caption">
+                    <span class="item-category">Food</span>
+                    <h2 class="item-title">The Geometry of Kaiseki: Artistry on a Plate</h2>
+                </div>
+            </a>
 
-        <section class="category-section">
-            <h2 class="category-heading">Food</h2>
-            <div class="feed-grid">
-                <a href="#" class="feed-item">
-                    <div class="image-wrapper"><img src="https://images.unsplash.com/photo-1582450871972-ab5ca641643d?auto=format&fit=cover&w=800&q=80" alt=""></div>
-                    <div class="item-caption"><h3 class="item-title">The Geometry of Kaiseki: Artistry on a Plate</h3></div>
-                </a>
-                <a href="#" class="feed-item">
-                    <div class="image-wrapper"><img src="https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=cover&w=800&q=80" alt=""></div>
-                    <div class="item-caption"><h3 class="item-title">Chado: The Aesthetic Rituals of Matcha and Tea</h3></div>
-                </a>
-                <a href="#" class="feed-item">
-                    <div class="image-wrapper"><img src="https://images.unsplash.com/photo-1617093727343-374698b1b08d?auto=format&fit=cover&w=800&q=80" alt=""></div>
-                    <div class="item-caption"><h3 class="item-title">Seasonal Wagashi: Edible Poetry of the Equinox</h3></div>
-                </a>
-            </div>
-        </section>
+            <a href="#" class="feed-item">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1582963116812-70b5516a7f5a?auto=format&fit=cover&w=800&q=80" alt="">
+                </div>
+                <div class="item-caption">
+                    <span class="item-category">Food & Living</span>
+                    <h2 class="item-title">Curating Space: Living with Less, Feeling with More</h2>
+                </div>
+            </a>
 
-        <section class="category-section">
-            <h2 class="category-heading">Art of living</h2>
-            <div class="feed-grid">
-                <a href="#" class="feed-item">
-                    <div class="image-wrapper"><img src="https://images.unsplash.com/photo-1582963116812-70b5516a7f5a?auto=format&fit=cover&w=800&q=80" alt=""></div>
-                    <div class="item-caption"><h3 class="item-title">Curating Space: Living with Less, Feeling with More</h3></div>
-                </a>
-                <a href="#" class="feed-item">
-                    <div class="image-wrapper"><img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=cover&w=800&q=80" alt=""></div>
-                    <div class="item-caption"><h3 class="item-title">The Tsukimi Ritual: Celebrating the Mid-Autumn Harvest Moon</h3></div>
-                </a>
-                <a href="#" class="feed-item">
-                    <div class="image-wrapper"><img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=cover&w=800&q=80" alt=""></div>
-                    <div class="item-caption"><h3 class="item-title">Seasonal Transience: Welcoming Autumn Spirits via Fire</h3></div>
-                </a>
-            </div>
-        </section>
+            <a href="#" class="feed-item">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=cover&w=800&q=80" alt="">
+                </div>
+                <div class="item-caption">
+                    <span class="item-category">Japanese philosophy</span>
+                    <h2 class="item-title">Wabi-Sabi: Finding Grace in Wear and Imperfection</h2>
+                </div>
+            </a>
 
-        <section class="category-section">
-            <h2 class="category-heading">Japanese philosophy</h2>
-            <div class="feed-grid">
-                <a href="#" class="feed-item">
-                    <div class="image-wrapper"><img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=cover&w=800&q=80" alt=""></div>
-                    <div class="item-caption"><h3 class="item-title">Wabi-Sabi: Finding Grace in Wear and Imperfection</h3></div>
-                </a>
-                <a href="#" class="feed-item">
-                    <div class="image-wrapper"><img src="https://images.unsplash.com/photo-1504618223053-559bdef9dd5a?auto=format&fit=cover&w=800&q=80" alt=""></div>
-                    <div class="item-caption"><h3 class="item-title">Mono no Aware: The Beautiful Melancholy of Ephemeral Life</h3></div>
-                </a>
-                <a href="#" class="feed-item">
-                    <div class="image-wrapper"><img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=cover&w=800&q=80" alt=""></div>
-                    <div class="item-caption"><h3 class="item-title">Ma (間): The Power of Empty Space and Active Silence</h3></div>
-                </a>
-            </div>
-        </section>
+            <a href="#" class="feed-item">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=cover&w=800&q=80" alt="">
+                </div>
+                <div class="item-caption">
+                    <span class="item-category">Aesthetic Japan</span>
+                    <h2 class="item-title">Showa Era Minimalism: A Visual Retrospective</h2>
+                </div>
+            </a>
 
+        </div>
     </main>
 
     <footer>
