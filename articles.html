@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles — The New Japonisme</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #000000; /* Pure black background */
+            --text-color: #eeeeee; /* Soft white text */
+            --accent-color: #9e2a2b; /* Elegant Japanese crimson */
+            --border-color: #1a1a1a; /* Dark grey borders */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Header & Navigation */
+        header {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px 20px 20px;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 3.3rem; 
+            font-weight: 700; 
+            letter-spacing: 3.6px; 
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            display: inline-block;
+            text-decoration: none;
+            color: var(--text-color);
+        }
+
+        .logo-text-wrapper {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px; 
+        }
+
+        .logo span {
+            color: var(--text-color); 
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background-color: var(--accent-color); 
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        nav {
+            margin-bottom: 50px;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 18px 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0 25px;
+            font-weight: 400;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Main Content Container */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 80px 20px;
+        }
+
+        .page-title {
+            font-size: 1.8rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 40px;
+            text-align: center;
+            color: var(--text-color);
+        }
+
+        /* Chronological Feed (Strict 3-in-a-row Grid) */
+        .feed-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px; 
+        }
+
+        .feed-item {
+            background: #0a0a0a;
+            text-decoration: none;
+            color: var(--text-color);
+            display: block;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease;
+        }
+
+        .image-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 100%; /* Strict 1:1 Instagram Square */
+            overflow: hidden;
+            background-color: #111;
+        }
+
+        .image-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .feed-item:hover .image-wrapper img {
+            transform: scale(1.03);
+        }
+
+        /* Caption underneath the photo with category tag */
+        .item-caption {
+            padding: 20px;
+            background: #050505;
+        }
+
+        .item-category {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--accent-color); /* Elegant red category label */
+            font-weight: 700;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .item-title {
+            font-size: 1rem;
+            font-weight: 300;
+            line-height: 1.4;
+            letter-spacing: -0.1px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.75rem;
+            color: #444;
+            border-top: 1px solid var(--border-color);
+            letter-spacing: 1.5px;
+        }
+
+        /* Responsive Optimization */
+        @media (max-width: 1024px) {
+            .feed-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .logo {
+                font-size: 2.8rem;
+                letter-spacing: 3px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 40px 20px 10px 20px;
+            }
+            nav a {
+                margin: 0 8px;
+                font-size: 0.7rem;
+            }
+            .feed-grid {
+                grid-template-columns: 1fr; /* Single column on phones */
+                gap: 20px;
+            }
+            .logo {
+                font-size: 2rem;
+                letter-spacing: 2px;
+            }
+            .logo-icon {
+                width: 30px;
+                height: 30px;
+            }
+            .page-title {
+                font-size: 1.4rem;
+                margin-bottom: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="/" class="logo">
+            <div class="logo-text-wrapper">
+                <div class="logo-icon"></div>
+                The New <span>Japonisme</span>
+            </div>
+        </a>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/articles.html">Articles</a>
+            <a href="/about.html">About</a>
+            <a href="/instagram.html">Instagram</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="page-title">All Articles</h1>
+        
+        <div class="feed-grid">
+            
+            <a href="#" class="feed-item">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=cover&w=800&q=80" alt="">
+                </div>
+                <div class="item-caption">
+                    <span class="item-category">Aesthetic Japan</span>
+                    <h2 class="item-title">The Architectural Lines of Kyoto's Hidden Temples</h2>
+                </div>
+            </a>
+
+            <a href="#" class="feed-item">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=cover&w=800&q=80" alt="">
+                </div>
+                <div class="item-caption">
+                    <span class="item-category">Style</span>
+                    <h2 class="item-title">Winter Elegance: How to Style a Japanese Kimono in Cold Seasons</h2>
+                </div>
+            </a>
+
+            <a href="#" class="feed-item">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1582450871972-ab5ca641643d?auto=format&fit=cover&w=800&q=80" alt="">
+                </div>
+                <div class="item-caption">
+                    <span class="item-category">Food</span>
+                    <h2 class="item-title">The Geometry of Kaiseki: Artistry on a Plate</h2>
+                </div>
+            </a>
+
+            <a href="#" class="feed-item">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1582963116812-70b5516a7f5a?auto=format&fit=cover&w=800&q=80" alt="">
+                </div>
+                <div class="item-caption">
+                    <span class="item-category">Food & Living</span>
+                    <h2 class="item-title">Curating Space: Living with Less, Feeling with More</h2>
+                </div>
+            </a>
+
+            <a href="#" class="feed-item">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=cover&w=800&q=80" alt="">
+                </div>
+                <div class="item-caption">
+                    <span class="item-category">Japanese philosophy</span>
+                    <h2 class="item-title">Wabi-Sabi: Finding Grace in Wear and Imperfection</h2>
+                </div>
+            </a>
+
+            <a href="#" class="feed-item">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=cover&w=800&q=80" alt="">
+                </div>
+                <div class="item-caption">
+                    <span class="item-category">Aesthetic Japan</span>
+                    <h2 class="item-title">Showa Era Minimalism: A Visual Retrospective</h2>
+                </div>
+            </a>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 THE NEW JAPONISME. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+</body>
+</html>
