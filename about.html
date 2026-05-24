@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About — The New Japonisme</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #000000; /* Pure black background */
+            --text-color: #eeeeee; /* Soft white text */
+            --muted-text: #a0a0a0; /* Muted grey for descriptions */
+            --accent-color: #9e2a2b; /* Elegant Japanese crimson */
+            --border-color: #1a1a1a; /* Dark grey borders */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Header & Navigation */
+        header {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px 20px 20px;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 3.3rem; 
+            font-weight: 700; 
+            letter-spacing: 3.6px; 
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            display: inline-block;
+            text-decoration: none;
+            color: var(--text-color);
+        }
+
+        .logo-text-wrapper {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px; 
+        }
+
+        .logo span {
+            color: var(--text-color); 
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background-color: var(--accent-color); 
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        nav {
+            margin-bottom: 60px;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 18px 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0 25px;
+            font-weight: 400;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* About Page Content */
+        main {
+            max-width: 750px; /* Elegant narrow reading column */
+            margin: 0 auto;
+            padding: 0 20px 100px 20px;
+        }
+
+        .about-title {
+            font-size: 2rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 40px;
+            text-align: center;
+            color: var(--text-color);
+        }
+
+        .about-paragraph {
+            font-size: 1.05rem;
+            font-weight: 300;
+            color: var(--text-color);
+            margin-bottom: 30px;
+            text-align: justify;
+        }
+
+        .about-paragraph span {
+            color: var(--accent-color);
+            font-weight: 700;
+        }
+
+        /* Strong Highlight Quote for your key phrase */
+        .highlight-quote {
+            font-size: 1.4rem;
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--text-color);
+            border-left: 3px solid var(--accent-color);
+            padding-left: 25px;
+            margin: 45px 0;
+            text-align: left;
+            letter-spacing: 0.5px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.75rem;
+            color: #444;
+            border-top: 1px solid var(--border-color);
+            letter-spacing: 1.5px;
+        }
+
+        /* Responsive Optimization */
+        @media (max-width: 768px) {
+            header {
+                padding: 40px 20px 10px 20px;
+            }
+            nav a {
+                margin: 0 8px;
+                font-size: 0.7rem;
+            }
+            .logo {
+                font-size: 2rem;
+                letter-spacing: 2px;
+            }
+            .logo-icon {
+                width: 30px;
+                height: 30px;
+            }
+            .about-title {
+                font-size: 1.6rem;
+                margin-bottom: 30px;
+            }
+            .about-paragraph {
+                font-size: 0.95rem;
+                text-align: left;
+            }
+            .highlight-quote {
+                font-size: 1.15rem;
+                padding-left: 15px;
+                margin: 35px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="/" class="logo">
+            <div class="logo-text-wrapper">
+                <div class="logo-icon"></div>
+                The New <span>Japonisme</span>
+            </div>
+        </a>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/articles.html">Articles</a>
+            <a href="/about.html">About</a>
+            <a href="/instagram.html">Instagram</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="about-title">About</h1>
+        
+        <p class="about-paragraph">
+            <strong>"The New Japonisme"</strong> is a journal of Japanese culture, seen and studied through foreign eyes for an international community.
+        </p>
+
+        <p class="about-paragraph">
+            From everyday lifestyle and food rituals to philosophy, vintage aesthetics, and modern style, the blog shares authentic stories of how Japan is lived today. It explores the balance between tradition and the present, showing how design, food, and thought continue to shape daily life.
+        </p>
+
+        <div class="highlight-quote">
+            This is not a guidebook or a postcard image.<br>
+            It is a space to discover Japan as a living culture, where small details carry meaning and everyday choices reflect larger ideas.
+        </div>
+
+        <p class="about-paragraph">
+            "The New Japonisme" invites readers to explore style, food, and the art of living in Japan with curiosity and openness.
+        </p>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 THE NEW JAPONISME. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+</body>
+</html>
