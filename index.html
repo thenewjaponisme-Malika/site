@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The New Japonisme</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #fcfbf9; /* Soft cream background */
-            --text-color: #1a1a1a;
+            --bg-color: #000000; /* Pure black background */
+            --text-color: #eeeeee; /* Soft white text */
             --accent-color: #9e2a2b; /* Elegant Japanese crimson */
-            --border-color: #e8e4db;
+            --border-color: #222222; /* Dark grey borders */
         }
 
         * {
@@ -19,7 +22,8 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            /* Now using Poppins as the primary font */
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.5;
@@ -30,23 +34,23 @@
         header {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 20px 20px 20px;
+            padding: 60px 20px 20px 20px; /* Increased padding */
             text-align: center;
         }
 
         .logo {
-            font-size: 2.2rem;
-            font-weight: 300;
+            /* +50% Size, Bolder (600), Poppins font */
+            font-size: 3.3rem; /* (Was 2.2rem * 1.5 = 3.3rem) */
+            font-weight: 600; /* Semi-bold for impact */
             letter-spacing: 4px;
             text-transform: uppercase;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             display: inline-block;
             text-decoration: none;
             color: var(--text-color);
         }
 
         .logo span {
-            font-weight: 600;
             color: var(--accent-color);
         }
 
@@ -54,16 +58,16 @@
             margin-bottom: 40px;
             border-top: 1px solid var(--border-color);
             border-bottom: 1px solid var(--border-color);
-            padding: 15px 0;
+            padding: 18px 0;
         }
 
         nav a {
             text-decoration: none;
             color: var(--text-color);
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin: 0 20px;
+            margin: 0 25px;
             font-weight: 400;
             transition: color 0.2s ease;
         }
@@ -72,21 +76,22 @@
             color: var(--accent-color);
         }
 
-        /* Main Feed (Instagram-style Grid) */
+        /* Main Feed (Strict 3-in-a-row Grid) */
         main {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px 60px 20px;
+            padding: 0 20px 80px 20px;
         }
 
         .feed-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 25px;
+            /* Explicitly setting strict 3 columns on large screens */
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px; /* Smaller gap for tighter Instagram look */
         }
 
         .feed-item {
-            background: #white;
+            background: #111; /* Slightly lighter than pure black */
             text-decoration: none;
             color: var(--text-color);
             display: block;
@@ -101,7 +106,7 @@
             width: 100%;
             padding-top: 100%; /* Perfect 1:1 Square */
             overflow: hidden;
-            background-color: #eee;
+            background-color: #1a1a1a;
         }
 
         .image-wrapper img {
@@ -115,17 +120,17 @@
         }
 
         .feed-item:hover .image-wrapper img {
-            transform: scale(1.05); /* Smooth zoom effect on hover */
+            transform: scale(1.03); /* Subtle zoom effect */
         }
 
         /* Text overlay/caption underneath the image */
         .item-caption {
             padding: 20px;
-            background: #fff;
+            background: #111; /* Slightly lighter than pure black */
         }
 
         .item-category {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             text-transform: uppercase;
             letter-spacing: 1.5px;
             color: var(--accent-color);
@@ -134,34 +139,56 @@
         }
 
         .item-title {
-            font-size: 1.15rem;
-            font-weight: 400;
+            font-size: 1.05rem;
+            font-weight: 300; /* Lighter weight for titles on black */
             line-height: 1.4;
-            letter-spacing: -0.2px;
+            letter-spacing: -0.1px;
         }
 
         /* Footer */
         footer {
             text-align: center;
             padding: 40px 20px;
-            font-size: 0.8rem;
-            color: #888;
+            font-size: 0.75rem;
+            color: #666; /* Darker text in footer */
             border-top: 1px solid var(--border-color);
-            letter-spacing: 1px;
+            margin-top: auto;
+            letter-spacing: 1.5px;
         }
 
         /* Mobile Optimization */
-        @media (max-width: 768px) {
-            nav a {
-                margin: 0 10px;
-                font-size: 0.75rem;
-            }
+        @media (max-width: 1024px) {
+            /* 2 columns on tablets */
             .feed-grid {
-                grid-template-columns: 1fr; /* One column on mobile just like Insta feed */
-                gap: 20px;
+                grid-template-columns: repeat(2, 1fr);
             }
             .logo {
-                font-size: 1.8rem;
+                font-size: 2.8rem; /* Scale down slightly on tablets */
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 40px 20px 10px 20px;
+            }
+            nav {
+                padding: 12px 0;
+            }
+            nav a {
+                margin: 0 10px;
+                font-size: 0.7rem;
+                letter-spacing: 1px;
+            }
+            .feed-grid {
+                grid-template-columns: 1fr; /* Single column on mobile like Insta feed */
+                gap: 10px;
+            }
+            .logo {
+                font-size: 2.2rem; /* Scale down more on mobile */
+                letter-spacing: 3px;
+            }
+            .item-title {
+                font-size: 0.95rem;
             }
         }
     </style>
@@ -211,12 +238,6 @@
                 </div>
             </a>
 
-        </div>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 THE NEW JAPONISME. ALL RIGHTS RESERVED.</p>
-    </footer>
-
-</body>
-</html>
+            <a href="#" class="feed-item">
+                <div class="image-wrapper">
+                    <img src="
