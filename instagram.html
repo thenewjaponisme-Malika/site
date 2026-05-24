@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram — The New Japonisme</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #000000; /* Pure black background */
+            --text-color: #eeeeee; /* Soft white text */
+            --muted-text: #888888; /* Darker grey for details */
+            --accent-color: #9e2a2b; /* Elegant Japanese crimson */
+            --border-color: #1a1a1a; /* Dark grey borders */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header & Navigation */
+        header {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 60px 20px 20px 20px;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 3.3rem; 
+            font-weight: 700; 
+            letter-spacing: 3.6px; 
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            display: inline-block;
+            text-decoration: none;
+            color: var(--text-color);
+        }
+
+        .logo-text-wrapper {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px; 
+        }
+
+        .logo span {
+            color: var(--text-color); 
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background-color: var(--accent-color); 
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        nav {
+            margin-bottom: 50px;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 18px 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0 25px;
+            font-weight: 400;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Instagram Link Page Content */
+        main {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 20px 80px 20px;
+            text-align: center;
+        }
+
+        /* Elegant Big Crimson Circle for the Center Concept */
+        .instagram-profile-circle {
+            width: 90px;
+            height: 90px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            margin-bottom: 25px;
+        }
+
+        .instagram-handle {
+            font-size: 1.5rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+
+        .instagram-bio {
+            font-size: 0.95rem;
+            font-weight: 300;
+            color: #b0b0b0;
+            margin-bottom: 35px;
+            max-width: 450px;
+        }
+
+        /* Premium Minimalist Button */
+        .instagram-btn {
+            display: inline-block;
+            text-decoration: none;
+            color: var(--text-color);
+            border: 1px solid var(--text-color);
+            padding: 15px 40px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 400;
+            background: transparent;
+            transition: all 0.3s ease;
+        }
+
+        .instagram-btn:hover {
+            background-color: var(--text-color);
+            color: var(--bg-color); /* Inverts colors smoothly on hover */
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.75rem;
+            color: #444;
+            border-top: 1px solid var(--border-color);
+            letter-spacing: 1.5px;
+            width: 100%;
+            margin-top: auto;
+        }
+
+        /* Responsive Optimization */
+        @media (max-width: 768px) {
+            header {
+                padding: 40px 20px 10px 20px;
+            }
+            nav a {
+                margin: 0 8px;
+                font-size: 0.7rem;
+            }
+            .logo {
+                font-size: 2rem;
+                letter-spacing: 2px;
+            }
+            .logo-icon {
+                width: 30px;
+                height: 30px;
+            }
+            .instagram-handle {
+                font-size: 1.25rem;
+            }
+            .instagram-bio {
+                font-size: 0.85rem;
+            }
+            .instagram-btn {
+                padding: 12px 30px;
+                font-size: 0.75rem;
+                letter-spacing: 2px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="/" class="logo">
+            <div class="logo-text-wrapper">
+                <div class="logo-icon"></div>
+                The New <span>Japonisme</span>
+            </div>
+        </a>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/articles.html">Articles</a>
+            <a href="/about.html">About</a>
+            <a href="/instagram.html">Instagram</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="instagram-profile-circle"></div>
+        
+        <h1 class="instagram-handle">@thenewjaponisme</h1>
+        
+        <p class="instagram-bio">
+            Join our international community. Discover visual stories, vintage aesthetics, and everyday rituals showing how tradition balances with modern life in Japan.
+        </p>
+
+        <a href="https://www.instagram.com/thenewjaponisme/" target="_blank" rel="noopener noreferrer" class="instagram-btn">
+            Follow on Instagram
+        </a>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 THE NEW JAPONISME. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+</body>
+</html>
