@@ -6,7 +6,7 @@
     <title>The New Japonisme</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-color: #000000; /* Pure black background */
@@ -39,19 +39,34 @@
         }
 
         .logo {
-            /* +50% Size, Bolder (600), Poppins font */
+            /* +50% Size, Extra-Bold (700), Poppins font */
             font-size: 3.3rem; /* (Was 2.2rem * 1.5 = 3.3rem) */
-            font-weight: 600; /* Semi-bold for impact */
+            font-weight: 700; /* Bolder for impact */
             letter-spacing: 4px;
             text-transform: uppercase;
             margin-bottom: 30px;
             display: inline-block;
             text-decoration: none;
             color: var(--text-color);
+            position: relative;
+        }
+
+        .logo-text-wrapper {
+            display: inline-flex;
+            align-items: center;
         }
 
         .logo span {
             color: var(--accent-color);
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background-color: #D32F2F; /* Crimson from icon image_5.png */
+            border-radius: 50%;
+            margin-right: 15px; /* Space between icon and text */
+            flex-shrink: 0;
         }
 
         nav {
@@ -165,6 +180,11 @@
             .logo {
                 font-size: 2.8rem; /* Scale down slightly on tablets */
             }
+            .logo-icon {
+                width: 38px;
+                height: 38px;
+                margin-right: 12px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -187,6 +207,11 @@
                 font-size: 2.2rem; /* Scale down more on mobile */
                 letter-spacing: 3px;
             }
+            .logo-icon {
+                width: 28px;
+                height: 28px;
+                margin-right: 10px;
+            }
             .item-title {
                 font-size: 0.95rem;
             }
@@ -196,7 +221,12 @@
 <body>
 
     <header>
-        <a href="/" class="logo">The New <span>Japonisme</span></a>
+        <a href="/" class="logo">
+            <div class="logo-text-wrapper">
+                <div class="logo-icon"></div>
+                The New <span>Japonisme</span>
+            </div>
+        </a>
         <nav>
             <a href="/">Home</a>
             <a href="/articles.html">Articles</a>
@@ -220,24 +250,4 @@
 
             <a href="#" class="feed-item">
                 <div class="image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=cover&w=800&q=80" alt="Winter Kimono Style">
-                </div>
-                <div class="item-caption">
-                    <div class="item-category">Fashion & Style</div>
-                    <h2 class="item-title">Winter Elegance: How to Style a Japanese Kimono in Cold Seasons</h2>
-                </div>
-            </a>
-
-            <a href="#" class="feed-item">
-                <div class="image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=cover&w=800&q=80" alt="Historical Eras">
-                </div>
-                <div class="item-caption">
-                    <div class="item-category">History</div>
-                    <h2 class="item-title">Echos of Modernity: Navigating the Cultural Shifts of the Showa Era</h2>
-                </div>
-            </a>
-
-            <a href="#" class="feed-item">
-                <div class="image-wrapper">
-                    <img src="
+                    <img
