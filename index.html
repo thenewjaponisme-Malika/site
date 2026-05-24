@@ -5,49 +5,218 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The New Japonisme</title>
     <style>
-        body {
-            background-color: #fcfbf9; /* Soft cream background */
-            color: #2b2b2b; /* Deep charcoal text */
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-            text-align: center;
-            padding: 50px 20px;
+        :root {
+            --bg-color: #fcfbf9; /* Soft cream background */
+            --text-color: #1a1a1a;
+            --accent-color: #9e2a2b; /* Elegant Japanese crimson */
+            --border-color: #e8e4db;
+        }
+
+        * {
+            box-sizing: border-box;
             margin: 0;
+            padding: 0;
         }
-        .container {
-            max-width: 600px;
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Header & Navigation */
+        header {
+            max-width: 1200px;
             margin: 0 auto;
-            padding-top: 10vh;
+            padding: 40px 20px 20px 20px;
+            text-align: center;
         }
-        h1 {
-            color: #9e2a2b; /* Elegant Japanese crimson */
-            font-size: 42px;
+
+        .logo {
+            font-size: 2.2rem;
             font-weight: 300;
-            letter-spacing: 2px;
+            letter-spacing: 4px;
             text-transform: uppercase;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
+            display: inline-block;
+            text-decoration: none;
+            color: var(--text-color);
         }
-        h1 span {
+
+        .logo span {
             font-weight: 600;
+            color: var(--accent-color);
         }
-        p {
-            font-size: 18px;
-            color: #666;
-            line-height: 1.6;
-            font-style: italic;
+
+        nav {
+            margin-bottom: 40px;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 15px 0;
         }
-        .divider {
-            width: 50px;
-            height: 2px;
-            background-color: #e0dacb;
-            margin: 30px auto;
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0 20px;
+            font-weight: 400;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Main Feed (Instagram-style Grid) */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 60px 20px;
+        }
+
+        .feed-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+        }
+
+        .feed-item {
+            background: #white;
+            text-decoration: none;
+            color: var(--text-color);
+            display: block;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease;
+        }
+
+        /* Image Container for Square Instagram Look */
+        .image-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 100%; /* Perfect 1:1 Square */
+            overflow: hidden;
+            background-color: #eee;
+        }
+
+        .image-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .feed-item:hover .image-wrapper img {
+            transform: scale(1.05); /* Smooth zoom effect on hover */
+        }
+
+        /* Text overlay/caption underneath the image */
+        .item-caption {
+            padding: 20px;
+            background: #fff;
+        }
+
+        .item-category {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .item-title {
+            font-size: 1.15rem;
+            font-weight: 400;
+            line-height: 1.4;
+            letter-spacing: -0.2px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.8rem;
+            color: #888;
+            border-top: 1px solid var(--border-color);
+            letter-spacing: 1px;
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 768px) {
+            nav a {
+                margin: 0 10px;
+                font-size: 0.75rem;
+            }
+            .feed-grid {
+                grid-template-columns: 1fr; /* One column on mobile just like Insta feed */
+                gap: 20px;
+            }
+            .logo {
+                font-size: 1.8rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>The New <span>Japonisme</span></h1>
-        <div class="divider"></div>
-        <p>Welcome. Our new platform exploring Japanese art, history, and aesthetics is currently under development and will launch shortly.</p>
-    </div>
+
+    <header>
+        <a href="/" class="logo">The New <span>Japonisme</span></a>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/articles.html">Articles</a>
+            <a href="/about.html">About</a>
+            <a href="/instagram.html">Instagram</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="feed-grid">
+            
+            <a href="#" class="feed-item">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=cover&w=800&q=80" alt="Japanese Art Impact">
+                </div>
+                <div class="item-caption">
+                    <div class="item-category">Art & Philosophy</div>
+                    <h2 class="item-title">Discovering the Global Impact of Japanese Art</h2>
+                </div>
+            </a>
+
+            <a href="#" class="feed-item">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=cover&w=800&q=80" alt="Winter Kimono Style">
+                </div>
+                <div class="item-caption">
+                    <div class="item-category">Fashion & Style</div>
+                    <h2 class="item-title">Winter Elegance: How to Style a Japanese Kimono in Cold Seasons</h2>
+                </div>
+            </a>
+
+            <a href="#" class="feed-item">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=cover&w=800&q=80" alt="Historical Eras">
+                </div>
+                <div class="item-caption">
+                    <div class="item-category">History</div>
+                    <h2 class="item-title">Echos of Modernity: Navigating the Cultural Shifts of the Showa Era</h2>
+                </div>
+            </a>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 THE NEW JAPONISME. ALL RIGHTS RESERVED.</p>
+    </footer>
+
 </body>
 </html>
