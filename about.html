@@ -89,29 +89,38 @@
             color: var(--accent-color);
         }
 
-        /* About Page Content with Image on the Left */
+        /* About Page Content with Matching Heights */
         main {
-            max-width: 1100px; /* Wider to accommodate image */
+            max-width: 1100px; 
             margin: 0 auto;
             padding: 0 20px 100px 20px;
-            display: flex; /* Flexbox for side-by-side layout */
-            gap: 50px; /* Space between image and text */
-            align-items: flex-start; /* Align content to top */
+            display: flex; 
+            gap: 50px; 
+            align-items: stretch; /* Forces image and text container to be the EXACT same height */
         }
 
         .about-image {
-            width: 420px; /* Specific width for the image column */
-            flex-shrink: 0; /* Prevents image from shrinking */
+            width: 45%; /* Proportion of layout for the image */
+            flex-shrink: 0;
+            position: relative;
         }
 
         .about-image img {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover; /* Clips the image beautifully to match the text block height */
             display: block;
         }
 
         .about-text-content {
-            flex-grow: 1; /* Text content fills remaining space */
+            flex-grow: 1; 
+            width: 55%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Centers text vertically against the image height */
         }
 
         .about-title {
@@ -119,7 +128,7 @@
             font-weight: 400;
             text-transform: uppercase;
             letter-spacing: 3px;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             text-align: left;
             color: var(--text-color);
         }
@@ -128,7 +137,7 @@
             font-size: 1.05rem;
             font-weight: 300;
             color: var(--text-color);
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             text-align: justify;
         }
 
@@ -137,15 +146,15 @@
             font-weight: 700;
         }
 
-        /* Strong Highlight Quote for your key phrase */
+        /* Strong Highlight Quote */
         .highlight-quote {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 400;
             line-height: 1.6;
             color: var(--text-color);
             border-left: 3px solid var(--accent-color);
-            padding-left: 25px;
-            margin: 45px 0;
+            padding-left: 20px;
+            margin: 30px 0;
             text-align: left;
             letter-spacing: 0.5px;
         }
@@ -163,13 +172,21 @@
         /* Responsive Optimization */
         @media (max-width: 900px) {
             main {
-                flex-direction: column; /* Stack vertically on small tablets */
+                flex-direction: column; 
                 align-items: center;
                 gap: 30px;
             }
             .about-image {
-                width: 100%; /* Image takes full width when stacked */
-                max-width: 500px; /* But limit its size */
+                width: 100%; 
+                max-width: 500px;
+                height: 500px; /* On tablets, fixed square size */
+            }
+            .about-image img {
+                position: relative;
+                height: auto;
+            }
+            .about-text-content {
+                width: 100%;
             }
             .about-title {
                 text-align: center;
@@ -194,7 +211,6 @@
             }
             .about-title {
                 font-size: 1.6rem;
-                margin-bottom: 30px;
             }
             .about-paragraph {
                 font-size: 0.95rem;
@@ -203,7 +219,9 @@
             .highlight-quote {
                 font-size: 1.15rem;
                 padding-left: 15px;
-                margin: 35px 0;
+            }
+            .about-image {
+                height: 350px; /* Smaller height on mobile phones */
             }
         }
     </style>
@@ -245,7 +263,7 @@
                 It is a space to discover Japan as a living culture, where small details carry meaning and everyday choices reflect larger ideas.
             </div>
 
-            <p class="about-paragraph">
+            <p class="about-paragraph" style="margin-bottom: 0;">
                 "The New Japonisme" invites readers to explore style, food, and the art of living in Japan with curiosity and openness.
             </p>
         </div>
