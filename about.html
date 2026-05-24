@@ -95,4 +95,163 @@
             margin: 0 auto;
             padding: 0 20px 100px 20px;
             display: flex; /* Flexbox for image/text side-by-side */
-            gap: 40
+            gap: 40px; /* Space between image and text */
+            align-items: flex-start; /* Align content to the top */
+        }
+
+        .about-image {
+            width: 350px; /* Specific width for the image */
+            flex-shrink: 0; /* Prevent the image from shrinking */
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .about-text-content {
+            flex-grow: 1; /* Text takes up the rest of the space */
+        }
+
+        .about-title {
+            font-size: 2rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 40px;
+            text-align: left;
+            color: var(--text-color);
+        }
+
+        .about-paragraph {
+            font-size: 1.05rem;
+            font-weight: 300;
+            color: var(--text-color);
+            margin-bottom: 30px;
+            text-align: justify;
+        }
+
+        .about-paragraph span {
+            color: var(--accent-color);
+            font-weight: 700;
+        }
+
+        /* Strong Highlight Quote for your key phrase */
+        .highlight-quote {
+            font-size: 1.4rem;
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--text-color);
+            border-left: 3px solid var(--accent-color);
+            padding-left: 25px;
+            margin: 45px 0;
+            text-align: left;
+            letter-spacing: 0.5px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.75rem;
+            color: #444;
+            border-top: 1px solid var(--border-color);
+            letter-spacing: 1.5px;
+        }
+
+        /* Responsive Optimization */
+        @media (max-width: 900px) {
+            main {
+                flex-direction: column; /* Stack vertically on small tablets */
+                align-items: center;
+                gap: 20px;
+            }
+            .about-image {
+                width: 100%; /* Image takes full width when stacked */
+                max-width: 400px; /* But don't let it get too huge */
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 40px 20px 10px 20px;
+            }
+            nav a {
+                margin: 0 8px;
+                font-size: 0.7rem;
+            }
+            .logo {
+                font-size: 2rem;
+                letter-spacing: 2px;
+            }
+            .logo-icon {
+                width: 30px;
+                height: 30px;
+            }
+            .about-title {
+                font-size: 1.6rem;
+                margin-bottom: 30px;
+                text-align: center; /* Centered title on small screens */
+            }
+            .about-paragraph {
+                font-size: 0.95rem;
+                text-align: left;
+            }
+            .highlight-quote {
+                font-size: 1.15rem;
+                padding-left: 15px;
+                margin: 35px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="/" class="logo">
+            <div class="logo-text-wrapper">
+                <div class="logo-icon"></div>
+                The New <span>Japonisme</span>
+            </div>
+        </a>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/articles.html">Articles</a>
+            <a href="/about.html">About</a>
+            <a href="/instagram.html">Instagram</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="about-image">
+            <img src="your-image-source.png" alt="Illustrative image of a person in a kimono">
+        </div>
+        <div class="about-text-content">
+            <h1 class="about-title">About</h1>
+            
+            <p class="about-paragraph">
+                <strong>"The New Japonisme"</strong> is a journal of Japanese culture, seen and studied through foreign eyes for an international community.
+            </p>
+
+            <p class="about-paragraph">
+                From everyday lifestyle and food rituals to philosophy, vintage aesthetics, and modern style, the blog shares authentic stories of how Japan is lived today. It explores the balance between tradition and the present, showing how design, food, and thought continue to shape daily life.
+            </p>
+
+            <div class="highlight-quote">
+                This is not a guidebook or a postcard image.<br>
+                It is a space to discover Japan as a living culture, where small details carry meaning and everyday choices reflect larger ideas.
+            </div>
+
+            <p class="about-paragraph">
+                "The New Japonisme" invites readers to explore style, food, and the art of living in Japan with curiosity and openness.
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 THE NEW JAPONISME. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+</body>
+</html>
