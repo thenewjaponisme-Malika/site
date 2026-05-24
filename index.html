@@ -28,13 +28,14 @@
             color: var(--text-color);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
+            overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
         }
 
         /* Header & Navigation */
         header {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 60px 20px 0px 20px; /* Reduced bottom padding */
+            padding: 60px 20px 0px 20px;
             text-align: center;
         }
 
@@ -89,22 +90,27 @@
             color: var(--accent-color);
         }
 
-        /* Animated Gradient Line - Positioned below Nav & above Manifesto */
+        /* 11x Thicker Full-Width Animated Gradient Banner Line */
         .animated-gradient-line {
-            height: 4px; /* Made thicker for a stronger visual accent */
-            max-width: 800px; /* Aligns beautifully with the text width below it */
-            width: calc(100% - 40px);
-            margin: 35px auto; /* Perfect balanced spacing below nav and above text */
+            height: 44px; /* Thicker by 11x (exactly 44px) */
+            width: 100vw; /* Flawless edge-to-edge screen width */
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            margin-top: 35px;
+            margin-bottom: 45px;
             
-            /* Gradient setup: crimson to white to crimson */
+            /* Crimson to white to crimson gradient */
             background: linear-gradient(90deg, var(--accent-color) 0%, #ffffff 50%, var(--accent-color) 100%);
             background-size: 200% 100%;
             
-            /* Infinite smooth movement animation */
+            /* Infinite movement animation loop */
             animation: moveGradient 4s linear infinite;
         }
 
-        /* Infinite horizontal movement logic */
+        /* Animation Keyframes */
         @keyframes moveGradient {
             0% { background-position: 100% 0%; }
             100% { background-position: -100% 0%; }
@@ -311,8 +317,9 @@
                 letter-spacing: 1px;
             }
             .animated-gradient-line {
-                height: 3px; /* Slightly thinner on phones to maintain proportion */
-                margin: 25px auto;
+                height: 32px; /* Perfectly scaled down but still very thick and prominent on mobile */
+                margin-top: 25px;
+                margin-bottom: 30px;
             }
             .intro-manifesto {
                 margin-bottom: 40px;
