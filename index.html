@@ -11,8 +11,9 @@
         :root {
             --bg-color: #000000; /* Pure black background */
             --text-color: #eeeeee; /* Soft white text */
+            --muted-text: #a0a0a0; /* Muted grey for descriptions */
             --accent-color: #9e2a2b; /* Elegant Japanese crimson */
-            --border-color: #222222; /* Dark grey borders */
+            --border-color: #1a1a1a; /* Dark grey borders */
         }
 
         * {
@@ -22,11 +23,10 @@
         }
 
         body {
-            /* Now using Poppins as the primary font */
             font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
-            line-height: 1.5;
+            line-height: 1.6;
             -webkit-font-smoothing: antialiased;
         }
 
@@ -34,38 +34,36 @@
         header {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 60px 20px 20px 20px; /* Increased padding */
+            padding: 60px 20px 20px 20px;
             text-align: center;
         }
 
         .logo {
-            /* +50% Size, Extra-Bold (700), Poppins font */
-            font-size: 3.3rem; /* (Was 2.2rem * 1.5 = 3.3rem) */
-            font-weight: 700; /* Bolder for impact */
-            letter-spacing: 4px;
+            font-size: 3.3rem; 
+            font-weight: 700; 
+            letter-spacing: 3.6px; 
             text-transform: uppercase;
             margin-bottom: 30px;
             display: inline-block;
             text-decoration: none;
             color: var(--text-color);
-            position: relative;
         }
 
         .logo-text-wrapper {
             display: inline-flex;
             align-items: center;
+            gap: 15px; 
         }
 
         .logo span {
-            color: var(--accent-color);
+            color: var(--text-color); 
         }
 
         .logo-icon {
             width: 48px;
             height: 48px;
-            background-color: #D32F2F; /* Crimson from icon image_5.png */
+            background-color: var(--accent-color); 
             border-radius: 50%;
-            margin-right: 15px; /* Space between icon and text */
             flex-shrink: 0;
         }
 
@@ -91,22 +89,74 @@
             color: var(--accent-color);
         }
 
-        /* Main Feed (Strict 3-in-a-row Grid) */
+        /* Manifesto Intro Section */
+        .intro-manifesto {
+            max-width: 800px;
+            margin: 0 auto 60px auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .intro-question {
+            font-size: 1.3rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            color: var(--text-color);
+            margin-bottom: 15px;
+        }
+
+        .intro-description {
+            font-size: 0.95rem;
+            font-weight: 300;
+            color: var(--muted-text);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Main Content Container */
         main {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px 80px 20px;
         }
 
+        /* Category Section Styling */
+        .category-section {
+            margin-bottom: 60px;
+        }
+
+        .category-heading {
+            font-size: 1.4rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--text-color);
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .category-heading::before {
+            content: "";
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            margin-right: 12px;
+        }
+
+        /* Instagram-style 3-in-a-row Grid */
         .feed-grid {
             display: grid;
-            /* Explicitly setting strict 3 columns on large screens */
             grid-template-columns: repeat(3, 1fr);
-            gap: 15px; /* Smaller gap for tighter Instagram look */
+            gap: 15px; 
         }
 
         .feed-item {
-            background: #111; /* Slightly lighter than pure black */
+            background: #0a0a0a;
             text-decoration: none;
             color: var(--text-color);
             display: block;
@@ -115,13 +165,12 @@
             transition: transform 0.3s ease;
         }
 
-        /* Image Container for Square Instagram Look */
         .image-wrapper {
             position: relative;
             width: 100%;
-            padding-top: 100%; /* Perfect 1:1 Square */
+            padding-top: 100%; 
             overflow: hidden;
-            background-color: #1a1a1a;
+            background-color: #111;
         }
 
         .image-wrapper img {
@@ -135,27 +184,17 @@
         }
 
         .feed-item:hover .image-wrapper img {
-            transform: scale(1.03); /* Subtle zoom effect */
+            transform: scale(1.03);
         }
 
-        /* Text overlay/caption underneath the image */
         .item-caption {
             padding: 20px;
-            background: #111; /* Slightly lighter than pure black */
-        }
-
-        .item-category {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--accent-color);
-            font-weight: 600;
-            margin-bottom: 8px;
+            background: #050505;
         }
 
         .item-title {
-            font-size: 1.05rem;
-            font-weight: 300; /* Lighter weight for titles on black */
+            font-size: 1rem;
+            font-weight: 300;
             line-height: 1.4;
             letter-spacing: -0.1px;
         }
@@ -165,25 +204,23 @@
             text-align: center;
             padding: 40px 20px;
             font-size: 0.75rem;
-            color: #666; /* Darker text in footer */
+            color: #444;
             border-top: 1px solid var(--border-color);
-            margin-top: auto;
             letter-spacing: 1.5px;
         }
 
-        /* Mobile Optimization */
+        /* Responsive Optimization */
         @media (max-width: 1024px) {
-            /* 2 columns on tablets */
             .feed-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
             .logo {
-                font-size: 2.8rem; /* Scale down slightly on tablets */
+                font-size: 2.8rem;
+                letter-spacing: 3px;
             }
             .logo-icon {
                 width: 38px;
                 height: 38px;
-                margin-right: 12px;
             }
         }
 
@@ -191,29 +228,30 @@
             header {
                 padding: 40px 20px 10px 20px;
             }
-            nav {
-                padding: 12px 0;
-            }
             nav a {
-                margin: 0 10px;
+                margin: 0 8px;
                 font-size: 0.7rem;
-                letter-spacing: 1px;
+            }
+            .intro-question {
+                font-size: 1.15rem;
+            }
+            .intro-description {
+                font-size: 0.85rem;
             }
             .feed-grid {
-                grid-template-columns: 1fr; /* Single column on mobile like Insta feed */
-                gap: 10px;
+                grid-template-columns: 1fr; 
+                gap: 15px;
             }
             .logo {
-                font-size: 2.2rem; /* Scale down more on mobile */
-                letter-spacing: 3px;
+                font-size: 2rem;
+                letter-spacing: 2px;
             }
             .logo-icon {
-                width: 28px;
-                height: 28px;
-                margin-right: 10px;
+                width: 30px;
+                height: 30px;
             }
-            .item-title {
-                font-size: 0.95rem;
+            .category-heading {
+                font-size: 1.1rem;
             }
         }
     </style>
@@ -233,72 +271,109 @@
             <a href="/about.html">About</a>
             <a href="/instagram.html">Instagram</a>
         </nav>
+
+        <div class="intro-manifesto">
+            <h1 class="intro-question">Have you ever wondered what is the true Japanese art of living?</h1>
+            <p class="intro-description">
+                From the perfectly imperfect beauty to the practical beauty of retro aesthetic, and everyday essentials. 
+                Explore history, modern style, Japanese food, and essential living, where Japanese culture explained simply, 
+                making it easy for foreigners to see, connect with, and understand.
+            </p>
+        </div>
     </header>
 
     <main>
-        <div class="feed-grid">
-            
-            <a href="#" class="feed-item">
-                <div class="image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=cover&w=800&q=80" alt="Japanese Art Impact">
-                </div>
-                <div class="item-caption">
-                    <div class="item-category">Art & Philosophy</div>
-                    <h2 class="item-title">Discovering the Global Impact of Japanese Art</h2>
-                </div>
-            </a>
 
-            <a href="#" class="feed-item">
-                <div class="image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=cover&w=800&q=80" alt="Winter Kimono Style">
-                </div>
-                <div class="item-caption">
-                    <div class="item-category">Fashion & Style</div>
-                    <h2 class="item-title">Winter Elegance: How to Style a Japanese Kimono in Cold Seasons</h2>
-                </div>
-            </a>
+        <section class="category-section">
+            <h2 class="category-heading">Aesthetic Japan</h2>
+            <div class="feed-grid">
+                <a href="#" class="feed-item">
+                    <div class="image-wrapper"><img src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=cover&w=800&q=80" alt=""></div>
+                    <div class="item-caption"><h3 class="item-title">The Architectural Lines of Kyoto's Hidden Temples</h3></div>
+                </a>
+                <a href="#" class="feed-item">
+                    <div class="image-wrapper"><img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=cover&w=800&q=80" alt=""></div>
+                    <div class="item-caption"><h3 class="item-title">Showa Era Minimalism: A Visual Retrospective</h3></div>
+                </a>
+                <a href="#" class="feed-item">
+                    <div class="image-wrapper"><img src="https://images.unsplash.com/photo-1528164344705-47542687000d?auto=format&fit=cover&w=800&q=80" alt=""></div>
+                    <div class="item-caption"><h3 class="item-title">Shadow and Light in Traditional Wooden Machiya</h3></div>
+                </a>
+            </div>
+        </section>
 
-            <a href="#" class="feed-item">
-                <div class="image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=cover&w=800&q=80" alt="Historical Eras">
-                </div>
-                <div class="item-caption">
-                    <div class="item-category">History</div>
-                    <h2 class="item-title">Echos of Modernity: Navigating the Cultural Shifts of the Showa Era</h2>
-                </div>
-            </a>
+        <section class="category-section">
+            <h2 class="category-heading">Style</h2>
+            <div class="feed-grid">
+                <a href="#" class="feed-item">
+                    <div class="image-wrapper"><img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=cover&w=800&q=80" alt=""></div>
+                    <div class="item-caption"><h3 class="item-title">Winter Elegance: How to Style a Japanese Kimono in Cold Seasons</h3></div>
+                </a>
+                <a href="#" class="feed-item">
+                    <div class="image-wrapper"><img src="https://images.unsplash.com/photo-1517404212738-1926308ef81a?auto=format&fit=cover&w=800&q=80" alt=""></div>
+                    <div class="item-caption"><h3 class="item-title">Beyond Silk: The Textures and Weaves of Tsumugi</h3></div>
+                </a>
+                <a href="#" class="feed-item">
+                    <div class="image-wrapper"><img src="https://images.unsplash.com/photo-1496116211225-793530dc2ecf?auto=format&fit=cover&w=800&q=80" alt=""></div>
+                    <div class="item-caption"><h3 class="item-title">Modern Adaptations of the Traditional Yukata</h3></div>
+                </a>
+            </div>
+        </section>
 
-            <a href="#" class="feed-item">
-                <div class="image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1582963116812-70b5516a7f5a?auto=format&fit=cover&w=800&q=80" alt="Tea Ceremony Aesthetics">
-                </div>
-                <div class="item-caption">
-                    <div class="item-category">Aesthetics</div>
-                    <h2 class="item-title">The Art of Imperfection: Reimagining Wabi-Sabi in Contemporary Space</h2>
-                </div>
-            </a>
+        <section class="category-section">
+            <h2 class="category-heading">Food</h2>
+            <div class="feed-grid">
+                <a href="#" class="feed-item">
+                    <div class="image-wrapper"><img src="https://images.unsplash.com/photo-1582450871972-ab5ca641643d?auto=format&fit=cover&w=800&q=80" alt=""></div>
+                    <div class="item-caption"><h3 class="item-title">The Geometry of Kaiseki: Artistry on a Plate</h3></div>
+                </a>
+                <a href="#" class="feed-item">
+                    <div class="image-wrapper"><img src="https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=cover&w=800&q=80" alt=""></div>
+                    <div class="item-caption"><h3 class="item-title">Chado: The Aesthetic Rituals of Matcha and Tea</h3></div>
+                </a>
+                <a href="#" class="feed-item">
+                    <div class="image-wrapper"><img src="https://images.unsplash.com/photo-1617093727343-374698b1b08d?auto=format&fit=cover&w=800&q=80" alt=""></div>
+                    <div class="item-caption"><h3 class="item-title">Seasonal Wagashi: Edible Poetry of the Equinox</h3></div>
+                </a>
+            </div>
+        </section>
 
-            <a href="#" class="feed-item">
-                <div class="image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1517404212738-1926308ef81a?auto=format&fit=cover&w=800&q=80" alt="Cultural Fashion">
-                </div>
-                <div class="item-caption">
-                    <div class="item-category">Fashion</div>
-                    <h2 class="item-title">Beyond the Silk: The Evolution of Textile Arts from Kyoto to Modern Tokyo</h2>
-                </div>
-            </a>
+        <section class="category-section">
+            <h2 class="category-heading">Art of living</h2>
+            <div class="feed-grid">
+                <a href="#" class="feed-item">
+                    <div class="image-wrapper"><img src="https://images.unsplash.com/photo-1582963116812-70b5516a7f5a?auto=format&fit=cover&w=800&q=80" alt=""></div>
+                    <div class="item-caption"><h3 class="item-title">Curating Space: Living with Less, Feeling with More</h3></div>
+                </a>
+                <a href="#" class="feed-item">
+                    <div class="image-wrapper"><img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=cover&w=800&q=80" alt=""></div>
+                    <div class="item-caption"><h3 class="item-title">The Tsukimi Ritual: Celebrating the Mid-Autumn Harvest Moon</h3></div>
+                </a>
+                <a href="#" class="feed-item">
+                    <div class="image-wrapper"><img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=cover&w=800&q=80" alt=""></div>
+                    <div class="item-caption"><h3 class="item-title">Seasonal Transience: Welcoming Autumn Spirits via Fire</h3></div>
+                </a>
+            </div>
+        </section>
 
-            <a href="#" class="feed-item">
-                <div class="image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=cover&w=800&q=80" alt="Cityscape">
-                </div>
-                <div class="item-caption">
-                    <div class="item-category">Travel</div>
-                    <h2 class="item-title">Hidden Sanctuaries: 5 Architectural Wonders in the Heart of Modern Tokyo</h2>
-                </div>
-            </a>
+        <section class="category-section">
+            <h2 class="category-heading">Japanese philosophy</h2>
+            <div class="feed-grid">
+                <a href="#" class="feed-item">
+                    <div class="image-wrapper"><img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=cover&w=800&q=80" alt=""></div>
+                    <div class="item-caption"><h3 class="item-title">Wabi-Sabi: Finding Grace in Wear and Imperfection</h3></div>
+                </a>
+                <a href="#" class="feed-item">
+                    <div class="image-wrapper"><img src="https://images.unsplash.com/photo-1504618223053-559bdef9dd5a?auto=format&fit=cover&w=800&q=80" alt=""></div>
+                    <div class="item-caption"><h3 class="item-title">Mono no Aware: The Beautiful Melancholy of Ephemeral Life</h3></div>
+                </a>
+                <a href="#" class="feed-item">
+                    <div class="image-wrapper"><img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=cover&w=800&q=80" alt=""></div>
+                    <div class="item-caption"><h3 class="item-title">Ma (間): The Power of Empty Space and Active Silence</h3></div>
+                </a>
+            </div>
+        </section>
 
-        </div>
     </main>
 
     <footer>
