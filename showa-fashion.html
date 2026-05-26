@@ -48,9 +48,7 @@
             margin-bottom: 20px;
         }
 
-        .logo span {
-            color: var(--accent-color);
-        }
+        .logo span { color: var(--accent-color); }
 
         nav {
             border-top: 1px solid var(--border-color);
@@ -69,9 +67,7 @@
             transition: color 0.2s ease;
         }
 
-        nav a:hover {
-            color: var(--text-color);
-        }
+        nav a:hover { color: var(--text-color); }
 
         main {
             max-width: 800px;
@@ -108,16 +104,25 @@
             padding-left: 20px;
         }
 
+        /* Strict Instagram 4:5 Aspect Ratio for Article Top */
         .post-image-container {
             max-width: 380px;
             margin: 0 auto 40px auto;
             border: 1px solid var(--border-color);
+            position: relative;
+            width: 100%;
+            padding-top: 125%; /* 4:5 Ratio (5 / 4 * 100) */
+            overflow: hidden;
             background-color: #050505;
         }
 
         .post-image-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover;
             display: block;
         }
 
@@ -139,21 +144,9 @@
             margin-bottom: 25px;
         }
 
-        ul {
-            margin-bottom: 30px;
-            padding-left: 20px;
-        }
-
-        li {
-            font-size: 0.95rem;
-            font-weight: 300;
-            color: #ccc;
-            margin-bottom: 10px;
-        }
-
-        li strong {
-            color: var(--text-color);
-        }
+        ul { margin-bottom: 30px; padding-left: 20px; }
+        li { font-size: 0.95rem; font-weight: 300; color: #ccc; margin-bottom: 10px; }
+        li strong { color: var(--text-color); }
 
         footer {
             text-align: center;
@@ -185,7 +178,7 @@
     <main>
         
         <div class="post-image-container">
-            <img src="https://i.ibb.co/9H66w3k/moga-showa.jpg" alt="Showa Modern Girl Style">
+            <img src="showa-moga.png" alt="Showa Modern Girl Style">
         </div>
 
         <div class="post-meta">History & Style</div>
