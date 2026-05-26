@@ -53,9 +53,7 @@
             gap: 15px; 
         }
 
-        .logo span {
-            color: var(--text-color); 
-        }
+        .logo span { color: var(--text-color); }
 
         .logo-icon {
             width: 48px;
@@ -83,9 +81,7 @@
             transition: color 0.2s ease;
         }
 
-        nav a:hover {
-            color: var(--accent-color);
-        }
+        nav a:hover { color: var(--accent-color); }
 
         main {
             max-width: 1200px;
@@ -119,10 +115,11 @@
             transition: transform 0.3s ease;
         }
 
+        /* 4:5 Instagram Proportion Box Style */
         .image-wrapper {
             position: relative;
             width: 100%;
-            padding-top: 100%; 
+            padding-top: 125%; /* Strict 4:5 Vertical Instagram Ratio */
             overflow: hidden;
             background-color: #111;
         }
@@ -137,31 +134,10 @@
             transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
-        .feed-item:hover .image-wrapper img {
-            transform: scale(1.03);
-        }
-
-        .item-caption {
-            padding: 20px;
-            background: #050505;
-        }
-
-        .item-category {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--accent-color);
-            font-weight: 700;
-            margin-bottom: 8px;
-            display: block;
-        }
-
-        .item-title {
-            font-size: 1rem;
-            font-weight: 300;
-            line-height: 1.4;
-            letter-spacing: -0.1px;
-        }
+        .feed-item:hover .image-wrapper img { transform: scale(1.03); }
+        .item-caption { padding: 20px; background: #050505; }
+        .item-category { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent-color); font-weight: 700; margin-bottom: 8px; display: block; }
+        .item-title { font-size: 1rem; font-weight: 300; line-height: 1.4; letter-spacing: -0.1px; }
 
         footer {
             text-align: center;
@@ -211,7 +187,7 @@
             
             <a href="/showa-fashion.html" class="feed-item">
                 <div class="image-wrapper">
-                    <img src="https://i.ibb.co/9H66w3k/moga-showa.jpg" alt="Retro Showa Style Concept">
+                    <img src="showa-moga.png" alt="Retro Showa Style Concept">
                 </div>
                 <div class="item-caption">
                     <span class="item-category">History & Style</span>
