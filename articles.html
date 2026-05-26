@@ -9,10 +9,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #000000; /* Pure black background */
-            --text-color: #eeeeee; /* Soft white text */
-            --accent-color: #9e2a2b; /* Elegant Japanese crimson */
-            --border-color: #1a1a1a; /* Dark grey borders */
+            --bg-color: #000000;
+            --text-color: #eeeeee;
+            --accent-color: #9e2a2b;
+            --border-color: #1a1a1a;
         }
 
         * {
@@ -29,7 +29,6 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Header & Navigation */
         header {
             max-width: 1200px;
             margin: 0 auto;
@@ -88,7 +87,6 @@
             color: var(--accent-color);
         }
 
-        /* Main Content Container */
         main {
             max-width: 1200px;
             margin: 0 auto;
@@ -105,7 +103,6 @@
             color: var(--text-color);
         }
 
-        /* Chronological Feed (Strict 3-in-a-row Grid) */
         .feed-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -125,7 +122,7 @@
         .image-wrapper {
             position: relative;
             width: 100%;
-            padding-top: 100%; /* Strict 1:1 Instagram Square */
+            padding-top: 100%; 
             overflow: hidden;
             background-color: #111;
         }
@@ -144,7 +141,6 @@
             transform: scale(1.03);
         }
 
-        /* Caption underneath the photo with category tag */
         .item-caption {
             padding: 20px;
             background: #050505;
@@ -154,7 +150,7 @@
             font-size: 0.7rem;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            color: var(--accent-color); /* Elegant red category label */
+            color: var(--accent-color);
             font-weight: 700;
             margin-bottom: 8px;
             display: block;
@@ -167,7 +163,6 @@
             letter-spacing: -0.1px;
         }
 
-        /* Footer */
         footer {
             text-align: center;
             padding: 40px 20px;
@@ -177,41 +172,18 @@
             letter-spacing: 1.5px;
         }
 
-        /* Responsive Optimization */
         @media (max-width: 1024px) {
-            .feed-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .logo {
-                font-size: 2.8rem;
-                letter-spacing: 3px;
-            }
+            .feed-grid { grid-template-columns: repeat(2, 1fr); }
+            .logo { font-size: 2.8rem; letter-spacing: 3px; }
         }
 
         @media (max-width: 768px) {
-            header {
-                padding: 40px 20px 10px 20px;
-            }
-            nav a {
-                margin: 0 8px;
-                font-size: 0.7rem;
-            }
-            .feed-grid {
-                grid-template-columns: 1fr; /* Single column on phones */
-                gap: 20px;
-            }
-            .logo {
-                font-size: 2rem;
-                letter-spacing: 2px;
-            }
-            .logo-icon {
-                width: 30px;
-                height: 30px;
-            }
-            .page-title {
-                font-size: 1.4rem;
-                margin-bottom: 25px;
-            }
+            header { padding: 40px 20px 10px 20px; }
+            nav a { margin: 0 8px; font-size: 0.7rem; }
+            .feed-grid { grid-template-columns: 1fr; gap: 20px; }
+            .logo { font-size: 2rem; letter-spacing: 2px; }
+            .logo-icon { width: 30px; height: 30px; }
+            .page-title { font-size: 1.4rem; margin-bottom: 25px; }
         }
     </style>
 </head>
@@ -239,7 +211,7 @@
             
             <a href="/showa-fashion.html" class="feed-item">
                 <div class="image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=cover&w=800&q=80" alt="Retro Showa Style Concept">
+                    <img src="https://i.ibb.co/9H66w3k/moga-showa.jpg" alt="Retro Showa Style Concept">
                 </div>
                 <div class="item-caption">
                     <span class="item-category">History & Style</span>
