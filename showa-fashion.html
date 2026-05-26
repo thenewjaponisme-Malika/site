@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Showa Fashion: Japanese Style & Retro Aesthetic — The New Japonisme</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #000000;
+            --text-color: #eeeeee;
+            --muted-text: #a0a0a0;
+            --accent-color: #9e2a2b;
+            --border-color: #1a1a1a;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* Header & Navigation */
+        header {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px 0px 20px;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 3.3rem; 
+            font-weight: 700; 
+            letter-spacing: 3.6px; 
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            display: inline-block;
+            text-decoration: none;
+            color: var(--text-color);
+        }
+
+        .logo-text-wrapper {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px; 
+        }
+
+        .logo span { color: var(--text-color); }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background-color: var(--accent-color); 
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        nav {
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 18px 0;
+            margin-bottom: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0 25px;
+            font-weight: 400;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover { color: var(--accent-color); }
+
+        /* Animated Gradient Line */
+        .animated-gradient-line {
+            height: 44px;
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            margin-top: 35px;
+            margin-bottom: 50px;
+            background: linear-gradient(90deg, var(--accent-color) 0%, #ffffff 50%, var(--accent-color) 100%);
+            background-size: 200% 100%;
+            animation: moveGradient 4s linear infinite;
+        }
+
+        @keyframes moveGradient {
+            0% { background-position: 100% 0%; }
+            100% { background-position: -100% 0%; }
+        }
+
+        /* Article Layout Container */
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px 100px 20px;
+        }
+
+        .post-meta {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-color);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .post-title {
+            font-size: 2.4rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 30px;
+            letter-spacing: -0.5px;
+        }
+
+        .post-lead {
+            font-size: 1.15rem;
+            font-weight: 300;
+            color: var(--text-color);
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .post-lead span {
+            font-weight: 700;
+            color: var(--accent-color);
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin: 50px 0 20px 0;
+            letter-spacing: -0.3px;
+            border-left: 3px solid var(--accent-color);
+            padding-left: 15px;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 35px 0 15px 0;
+            color: #ffffff;
+        }
+
+        p {
+            font-size: 1.05rem;
+            font-weight: 300;
+            color: var(--text-color);
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+
+        .highlight-box {
+            background: #050505;
+            border: 1px solid var(--border-color);
+            padding: 25px;
+            margin: 35px 0;
+        }
+
+        /* Wafuku vs Yofuku Flex Box */
+        .comparison-box {
+            display: flex;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .comparison-item {
+            flex: 1;
+            background: #0a0a0a;
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            text-align: center;
+        }
+        .comparison-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--accent-color);
+            font-weight: 700;
+        }
+
+        /* Premium Timeline & Cards Layout instead of ugly tables */
+        .timeline-card {
+            background: #050505;
+            border: 1px solid var(--border-color);
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+        .card-era {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+        .card-name {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+        .card-desc {
+            font-size: 0.95rem;
+            font-weight: 300;
+            color: var(--muted-text);
+            line-height: 1.6;
+        }
+
+        /* Video Button Links */
+        .video-btn {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-color);
+            border: 1px solid var(--accent-color);
+            padding: 10px 25px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 10px 0 30px 0;
+            transition: all 0.3s ease;
+            font-weight: 400;
+        }
+        .video-btn:hover {
+            background: var(--accent-color);
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+        .video-btn::before {
+            content: "▶ ";
+            margin-right: 8px;
+            font-size: 0.7rem;
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        ul li {
+            font-size: 1.02rem;
+            font-weight: 300;
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+        }
+        ul li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: 700;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.75rem;
+            color: #444;
+            border-top: 1px solid var(--border-color);
+            letter-spacing: 1.5px;
+        }
+
+        /* Mobile Adaptive Layout */
+        @media (max-width: 768px) {
+            header { padding: 40px 15px 0 15px; }
+            nav a { margin: 0 6px; font-size: 0.65rem; }
+            .logo { font-size: 5.2vw; white-space: nowrap; letter-spacing: 1px; }
+            .logo-icon { width: 24px; height: 24px; }
+            .animated-gradient-line { height: 25px; margin-top: 25px; margin-bottom: 35px; }
+            .post-title { font-size: 1.8rem; }
+            .post-lead { font-size: 1rem; }
+            h2 { font-size: 1.3rem; }
+            h3 { font-size: 1.1rem; }
+            p, ul li { font-size: 0.95rem; text-align: left; }
+            .comparison-box { flex-direction: column; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="/" class="logo">
+            <div class="logo-text-wrapper">
+                <div class="logo-icon"></div>
+                The New <span>Japonisme</span>
+            </div>
+        </a>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/articles.html">Articles</a>
+            <a href="/about.html">About</a>
+            <a href="/instagram.html">Instagram</a>
+        </nav>
+        
+        <div class="animated-gradient-line"></div>
+    </header>
+
+    <main class="article-container">
+        <div class="post-meta">History & Style</div>
+        <h1 class="post-title">Showa Fashion: Japanese Style (1926-1989) & Showa Retro Aesthetic</h1>
+        
+        <p class="post-lead">
+            <strong>The Showa Era (1926–1989)</strong> is the most transformative period in modern Japanese history. Showa fashion shows us exactly how Japan changed from a country struggling with war into a global economic power. It is a story of resilience, adaptation, and unmistakable style. Here, we decode the evolution of Japanese Style.
+        </p>
+
+        <h2>What is "Showa Fashion"?</h2>
+        <p>
+            Showa Fashion encompasses all the clothing, subcultures, and style trends that defined Japan from 1926 to 1989. The overarching narrative of Showa Fashion is how traditional Japanese attire harmonized and intermixed with incoming Western shapes and sensibilities.
+        </p>
+
+        <div class="comparison-box">
+            <div class="comparison-item">
+                <span class="comparison-title">Traditional</span>
+                <h3>Wafuku</h3>
+                <p style="text-align:center; font-size:0.9rem; margin:0; color:var(--muted-text)">Like the classic Kimono</p>
+            </div>
+            <div class="comparison-item">
+                <span class="comparison-title">Western</span>
+                <h3>Yofuku</h3>
+                <p style="text-align:center; font-size:0.9rem; margin:0; color:var(--muted-text)">Like modern suits and dresses</p>
+            </div>
+        </div>
+
+        <h2>A Timeline of Showa Fashion</h2>
+
+        <h3>1. Western Influence (1920s–1930s)</h3>
+        <p>
+            The Showa era began with the lingering stylistic freedom of the liberal Taisho period. City girls, famously called <strong>Moga (Modern Girls)</strong>, shook society by wearing Western dresses, cutting their hair into short bobs, and walking confidently in high heels. 
+        </p>
+        <p>
+            Fashion became playful and less restrictive. While many kept the traditional Kimono, they began infusing it with Western accessories like sunglasses, hats, and gloves. The "Moga" represented a new generation of Japanese women: modern, independent, and fashionable—taking inspiration from global trends while remaining uniquely Japanese.
+        </p>
+        <a href="https://www.youtube.com/watch?v=AiHkGea2aBE" target="_blank" rel="noopener noreferrer" class="video-btn">Watch Historical Footage (1920s-1930s)</a>
+
+        <h3>2. Wartime Uniforms (1940s)</h3>
+        <p>
+            With the onset of World War II, everything shifted. Fashion ceased to be about self-expression and became entirely about survival, utility, and saving fabric. 
+        </p>
+        <p>
+            The required item of the decade was the <strong>Monpe</strong>—wide, baggy, highly practical trousers tied at the waist and ankles. Women wore Monpe out of absolute necessity instead of elegant skirts or traditional kimonos. It was a stripped-back, uniform aesthetic that defined the strict wartime atmosphere.
+        </p>
+        <a href="https://www.youtube.com/watch?v=wX7Odkt-Cw8" target="_blank" rel="noopener noreferrer" class="video-btn">Watch Historical Footage (1940s)</a>
+
+        <div class="highlight-box">
+            <h3 style="margin-top:0; color:var(--accent-color)">Icons & Figures of Early Showa</h3>
+            
+            <div class="timeline-card">
+                <div class="card-era">1920s Icon</div>
+                <div class="card-name">The Moga (Modern Girl)</div>
+                <div class="card-desc">The first true Japanese fashion subculture. These young women completely changed the social image of women with flapper cuts and makeup.</div>
+            </div>
+
+            <div class="timeline-card">
+                <div class="card-era">1930s Figure</div>
+                <div class="card-name">Hanae Mori (B. 1926)</div>
+                <div class="card-desc">Living through this era as a young girl, she would later grow up to become the first iconic Japanese designer accepted into the prestigious Haute Couture world in Paris.</div>
+            </div>
+
+            <div class="timeline-card">
+                <div class="card-era">1940s Collective Look</div>
+                <div class="card-name">The Woman in Monpe</div>
+                <div class="card-desc">The look of wartime utility. Baggy utility trousers became the legally required and practical uniform for women all over the country.</div>
+            </div>
+        </div>
+
+        <h3>3. Post-War American Boom (1950s–1960s)</h3>
+        <p>
+            Following the war, Japan experienced a staggering economic recovery that led to an unprecedented fashion boom. American pop culture—led by Hollywood movies and Rock & Roll—rushed into the Japanese mainstream.
+        </p>
+        <p>
+            Young men fell in love with the preppy American "Ivy League" look, featuring neat shirts and structured jackets. This movement became known as <strong>Ame-Tora (American Traditional)</strong>. Casual Western wear permanently established itself as the new normal for daily Showa life.
+        </p>
+        <a href="https://www.youtube.com/watch?v=8nXJyNuM3Xo" target="_blank" rel="noopener noreferrer" class="video-btn">Watch Post-War Style Footage</a>
+
+        <h3>4. Global Trends & Subcultures (1970s)</h3>
+        <p>
+            By the 1970s, Japanese youths were completely aligned with global movements, adapting long hair, bohemian styling, and massive bell-bottom pants. However, this was also the era when Japanese designers began establishing their own distinct design language on international runways.
+        </p>
+
+        <div class="timeline-card">
+            <div class="card-era">1960s–1970s Pioneer</div>
+            <div class="card-name">Hanae Mori</div>
+            <div class="card-desc">The first Japanese woman to conquer international runways, blending elegant Western shapes with traditional Japanese patterns, most notably her iconic butterflies.</div>
+        </div>
+
+        <div class="timeline-card">
+            <div class="card-era">1970s Vanguard</div>
+            <div class="card-name">Kenzo Takada (Kenzo)</div>
+            <div class="card-desc">Opening his "Jungle Jap" boutique in Paris in 1970, Kenzo brought a burst of bright folklife, layered ethnic prints, and joyful color to the formal Parisian fashion world.</div>
+        </div>
+
+        <div class="timeline-card">
+            <div class="card-era">1970s Structuralist</div>
+            <div class="card-name">Issey Miyake</div>
+            <div class="card-desc">Miyake focused deeply on the spatial relationship between the fabric and the human body ("a piece of cloth"), building sculptural tech-clothing far removed from rigid Western tailoring.</div>
+        </div>
+
+        <div class="timeline-card">
+            <div class="card-era">1970s Theatrical Genius</div>
+            <div class="card-name">Kansai Yamamoto</div>
+            <div class="card-desc">Celebrated for his explosive, dramatic, and intensely colorful designs. Kansai achieved global legendary status by creating the stage costumes for rock icon David Bowie’s Ziggy Stardust and Aladdin Sane tours.</div>
+        </div>
+        <a href="https://www.youtube.com/watch?v=kwE0rQCl4ys" target="_blank" rel="noopener noreferrer" class="video-btn">Watch 1970s Culture Footage</a>
+
+        <h3>5. High Fashion Avant-Garde (1980s)</h3>
+        <p>
+            The late Showa period completely shocked the global fashion industry. A wave of radical, deeply philosophical Japanese design took over Paris. This group was famously dubbed <strong>"The Crows"</strong> because they completely championed the color black.
+        </p>
+        <p>
+            Led by legendary forces like <strong>Rei Kawakubo (Comme des Garçons)</strong> and <strong>Yohji Yamamoto</strong>, they introduced deconstructed, asymmetrical, raw, and heavily oversized clothing that rejected standard Western rules of luxury and body form. Concurrently, the streets of Harajuku began brewing the early aesthetic lines that would later evolve into subcultures like Lolita and Visual Kei.
+        </p>
+        <a href="https://www.youtube.com/watch?v=LxNeN292FMo" target="_blank" rel="noopener noreferrer" class="video-btn">Watch 1980s Runway Footage</a>
+
+        <h2>How to Wear Showa Retro Looks Today</h2>
+        <p>
+            Today, the term "Showa Retro" heavily celebrates the colorful, optimistic, and highly visual eras of the 1950s through the 1970s. It remains incredibly popular among modern vintage enthusiasts.
+        </p>
+
+        <h3>Elements of the Showa Retro Look:</h3>
+        <ul>
+            <li><strong>Bold Patterns:</strong> Seek out strong geometric patterns, large abstract floral prints, and primary vintage tones.</li>
+            <li><strong>Knitwear:</strong> Simple, slightly slouchy knit cardigans and fine-gauge sweaters are an essential staple.</li>
+            <li><strong>Structured Outerwear:</strong> Think tailored, simple A-line or boxy coats in block colors.</li>
+            <li><strong>Accessories:</strong> Focus on oversized round glasses, classic small leather structured handbags, vintage silk hair scarves, and geometric hair clips.</li>
+        </ul>
+
+        <p style="color: var(--muted-text); font-style: italic;">
+            The journey through Showa Fashion is a journey through modern Japanese history itself. It is a testament to a culture that constantly absorbs outside influence only to transform it into something uniquely and powerfully its own.
+        </p>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 THE NEW JAPONISME. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+</body>
+</html>
