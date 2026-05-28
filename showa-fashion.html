@@ -136,6 +136,28 @@
             display: block;
         }
 
+        /* Класс для адаптивных фото в тексте */
+        .post-inline-image {
+            max-width: 100%;
+            margin: 20px 0 30px 0;
+            border: 1px solid var(--border-color);
+        }
+
+        .post-inline-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Класс для фото в блоке сравнения Wafuku/Yofuku */
+        .comparison-image {
+            width: 100%;
+            height: auto;
+            margin-top: 15px;
+            border: 1px solid var(--border-color);
+            display: block;
+        }
+
         .post-meta {
             font-size: 0.75rem;
             text-transform: uppercase;
@@ -190,13 +212,6 @@
             text-align: justify;
         }
 
-        .highlight-box {
-            background: #050505;
-            border: 1px solid var(--border-color);
-            padding: 25px;
-            margin: 35px 0;
-        }
-
         /* Wafuku vs Yofuku Flex Box */
         .comparison-box {
             display: flex;
@@ -216,34 +231,6 @@
             letter-spacing: 1.5px;
             color: var(--accent-color);
             font-weight: 700;
-        }
-
-        /* Premium Timeline & Cards Layout instead of ugly tables */
-        .timeline-card {
-            background: #050505;
-            border: 1px solid var(--border-color);
-            padding: 25px;
-            margin-bottom: 20px;
-        }
-        .card-era {
-            font-size: 0.8rem;
-            font-weight: 700;
-            color: var(--accent-color);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 5px;
-        }
-        .card-name {
-            font-size: 1.15rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-            color: #ffffff;
-        }
-        .card-desc {
-            font-size: 0.95rem;
-            font-weight: 300;
-            color: var(--muted-text);
-            line-height: 1.6;
         }
 
         /* Video Button Links */
@@ -358,18 +345,21 @@
             <div class="comparison-item">
                 <span class="comparison-title">Traditional</span>
                 <h3>Wafuku</h3>
-                <p style="text-align:center; font-size:0.9rem; margin:0; color:var(--muted-text)">Like the classic Kimono</p>
+                <img src="traditional-wafuku.jpg" alt="Traditional Wafuku Style" class="comparison-image">
             </div>
             <div class="comparison-item">
                 <span class="comparison-title">Western</span>
                 <h3>Yofuku</h3>
-                <p style="text-align:center; font-size:0.9rem; margin:0; color:var(--muted-text)">Like modern suits and dresses</p>
+                <img src="modern-yofuku.jpg" alt="Modern Yofuku Style" class="comparison-image">
             </div>
         </div>
 
         <h2>A Timeline of Showa Fashion</h2>
 
         <h3>1. Western Influence (1920s–1930s)</h3>
+        <div class="post-inline-image">
+            <img src="western-influence.jpg" alt="Western Influence 1920s-1930s">
+        </div>
         <p>
             The Showa era began with the lingering stylistic freedom of the liberal Taisho period. City girls, famously called <strong>Moga (Modern Girls)</strong>, shook society by wearing Western dresses, cutting their hair into short bobs, and walking confidently in high heels. 
         </p>
@@ -379,6 +369,9 @@
         <a href="https://www.youtube.com/watch?v=AiHkGea2aBE" target="_blank" rel="noopener noreferrer" class="video-btn">Watch Historical Footage (1920s-1930s)</a>
 
         <h3>2. Wartime Uniforms (1940s)</h3>
+        <div class="post-inline-image">
+            <img src="wartime-uniforms.jpg" alt="Wartime Uniforms 1940s">
+        </div>
         <p>
             With the onset of World War II, everything shifted. Fashion ceased to be about self-expression and became entirely about survival, utility, and saving fabric. 
         </p>
@@ -387,29 +380,10 @@
         </p>
         <a href="https://www.youtube.com/watch?v=wX7Odkt-Cw8" target="_blank" rel="noopener noreferrer" class="video-btn">Watch Historical Footage (1940s)</a>
 
-        <div class="highlight-box">
-            <h3 style="margin-top:0; color:var(--accent-color)">Icons & Figures of Early Showa</h3>
-            
-            <div class="timeline-card">
-                <div class="card-era">1920s Icon</div>
-                <div class="card-name">The Moga (Modern Girl)</div>
-                <div class="card-desc">The first true Japanese fashion subculture. These young women completely changed the social image of women with flapper cuts and makeup.</div>
-            </div>
-
-            <div class="timeline-card">
-                <div class="card-era">1930s Figure</div>
-                <div class="card-name">Hanae Mori (B. 1926)</div>
-                <div class="card-desc">Living through this era as a young girl, she would later grow up to become the first iconic Japanese designer accepted into the prestigious Haute Couture world in Paris.</div>
-            </div>
-
-            <div class="timeline-card">
-                <div class="card-era">1940s Collective Look</div>
-                <div class="card-name">The Woman in Monpe</div>
-                <div class="card-desc">The look of wartime utility. Baggy utility trousers became the legally required and practical uniform for women all over the country.</div>
-            </div>
-        </div>
-
         <h3>3. Post-War American Boom (1950s–1960s)</h3>
+        <div class="post-inline-image">
+            <img src="post-war-american-boom.jpg" alt="Post-War American Boom 1950s-1960s">
+        </div>
         <p>
             Following the war, Japan experienced a staggering economic recovery that led to an unprecedented fashion boom. American pop culture—led by Hollywood movies and Rock & Roll—rushed into the Japanese mainstream.
         </p>
@@ -419,36 +393,17 @@
         <a href="https://www.youtube.com/watch?v=8nXJyNuM3Xo" target="_blank" rel="noopener noreferrer" class="video-btn">Watch Post-War Style Footage</a>
 
         <h3>4. Global Trends & Subcultures (1970s)</h3>
+        <div class="post-inline-image">
+            <img src="global-trends-subcultures.jpg" alt="Global Trends and Subcultures 1970s">
+        </div>
         <p>
             By the 1970s, Japanese youths were completely aligned with global movements, adapting long hair, bohemian styling, and massive bell-bottom pants. However, this was also the era when Japanese designers began establishing their own distinct design language on international runways.
         </p>
 
-        <div class="timeline-card">
-            <div class="card-era">1960s–1970s Pioneer</div>
-            <div class="card-name">Hanae Mori</div>
-            <div class="card-desc">The first Japanese woman to conquer international runways, blending elegant Western shapes with traditional Japanese patterns, most notably her iconic butterflies.</div>
-        </div>
-
-        <div class="timeline-card">
-            <div class="card-era">1970s Vanguard</div>
-            <div class="card-name">Kenzo Takada (Kenzo)</div>
-            <div class="card-desc">Opening his "Jungle Jap" boutique in Paris in 1970, Kenzo brought a burst of bright folklife, layered ethnic prints, and joyful color to the formal Parisian fashion world.</div>
-        </div>
-
-        <div class="timeline-card">
-            <div class="card-era">1970s Structuralist</div>
-            <div class="card-name">Issey Miyake</div>
-            <div class="card-desc">Miyake focused deeply on the spatial relationship between the fabric and the human body ("a piece of cloth"), building sculptural tech-clothing far removed from rigid Western tailoring.</div>
-        </div>
-
-        <div class="timeline-card">
-            <div class="card-era">1970s Theatrical Genius</div>
-            <div class="card-name">Kansai Yamamoto</div>
-            <div class="card-desc">Celebrated for his explosive, dramatic, and intensely colorful designs. Kansai achieved global legendary status by creating the stage costumes for rock icon David Bowie’s Ziggy Stardust and Aladdin Sane tours.</div>
-        </div>
-        <a href="https://www.youtube.com/watch?v=kwE0rQCl4ys" target="_blank" rel="noopener noreferrer" class="video-btn">Watch 1970s Culture Footage</a>
-
         <h3>5. High Fashion Avant-Garde (1980s)</h3>
+        <div class="post-inline-image">
+            <img src="high-fashion-avant-garde.jpg" alt="High Fashion Avant-Garde 1980s">
+        </div>
         <p>
             The late Showa period completely shocked the global fashion industry. A wave of radical, deeply philosophical Japanese design took over Paris. This group was famously dubbed <strong>"The Crows"</strong> because they completely championed the color black.
         </p>
